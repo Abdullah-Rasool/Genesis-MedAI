@@ -79,7 +79,7 @@ def analyze_posture_from_frames(frame_paths: list,progress_callback = None):
     except Exception as e:
         return f" Error analyzing posture: {str(e)}"
 
-def analyze_video_posture(video_path: str):
+def analyze_video_posture(video_path: str,progress_callback = None):
     """
     FULL PROCESS:
     1) Extract frames from video
@@ -95,4 +95,4 @@ def analyze_video_posture(video_path: str):
         return frames
 
     # Step 2: analyze the extracted frames
-    return analyze_posture_from_frames(frames)
+    return analyze_posture_from_frames(frames,progress_callback=progress_callback)
