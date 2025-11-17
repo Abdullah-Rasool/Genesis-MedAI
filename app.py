@@ -123,7 +123,7 @@ with tabs[0]:
             result = read_prescription(path)
 
         st.success("Done!")
-        st.text_area("Extracted Text:", result, height=180)
+        st.text_area("Extracted Text:", result, height=180,disabled=True)
 
         save_history({
             "type": "prescription",
@@ -147,7 +147,7 @@ with tabs[1]:
 
         result = run_with_progress(analyze_video_posture, path)
 
-        st.text_area("Posture Report:", result, height=220)
+        st.text_area("Posture Report:", result, height=220,disabled=True)
 
         save_history({
             "type": "video",
@@ -197,7 +197,7 @@ with tabs[3]:
         with st.spinner("Summarizing notes..."):
             notes = generate_notes(raw)
 
-        st.text_area("Structured Notes:", notes, height=220)
+        st.text_area("Structured Notes:", notes, height=220,disabled=True)
 
         save_history({
             "type": "audio",
@@ -219,5 +219,5 @@ with tabs[4]:
     else:
         for i, item in enumerate(history):
             st.markdown(f"### 📝 {item['type'].capitalize()} — {item['timestamp']}")
-            st.text_area("", item["result"], key=f"hist_{i}", height=150)
+            st.text_area("", item["result"], key=f"hist_{i}", height=150,disabled=True)
             st.markdown("---")
