@@ -1,9 +1,9 @@
 streamlit
 google-generativeai
 python-dotenv
-opencv-python
 numpy
 pillow
 pydub
 moviepy
 opencv-python-headless
+
