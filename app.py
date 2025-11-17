@@ -168,8 +168,10 @@ with tabs[2]:
 
     if st.button("Ask AI"):
         if question.strip():
-            answer = run_with_progress(chat_assistant, question)
-            st.text_area("AI Answer:", answer, height=200)
+            with st.spinner("Writing..."):
+                answer = chat_assistant(question)
+            
+            st.text_area("AI Answer:", answer, height=200,disabled=True)
 
             save_history({
                 "type": "chat",
