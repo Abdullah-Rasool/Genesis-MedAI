@@ -39,7 +39,7 @@ git checkout dev
 ```
 ### 3. Install Dependencies
 ```bash
-pip install -r requirements.txt
+uv add -r requirements.txt
 ```
 ### 4. Add API Key
 ```bash
